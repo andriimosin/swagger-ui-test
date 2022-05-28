@@ -1,0 +1,55 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MyApp API",
+    "description": "MyApp API is gateway to all MyApp's backend services",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.myapp.com"
+    }
+  ],
+  "paths": {
+    "/v2/meows": {
+      "get": {
+        "tags": [
+          "meows"
+        ],
+        "operationId": "Meow-show",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Id of the meow",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Returns a meow with meow Id"
+          }
+        },
+        "description": "Returns a meow with meow Id",
+        "summary": "Returns a meow with meow Id",
+        "x-controller": "v2/meows",
+        "x-action": "show"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "meows",
+      "description": "This document describes the api for showing creating and updating meows"
+    }
+  ],
+  "components": {
+    "schemas": {
+    },
+    "securitySchemes": {
+    }
+  }
+}
